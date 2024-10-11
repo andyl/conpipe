@@ -52,6 +52,7 @@ defmodule Conpipe.MixProject do
   defp docs do
     [
       main: "readme",
+      source_ref: "master",
       extras: ["README.md"]
     ]
   end
