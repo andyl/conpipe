@@ -60,6 +60,7 @@ defmodule My.DoItAllConverter do
     |> Conpipe.Converter.Solid.convert()
     |> MyConverter.convert()
     |> Conpipe.Converter.Mdex.convert()
+    |> MyHtmlPostProcessor.convert()
   end
 end
 ```
