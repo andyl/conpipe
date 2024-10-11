@@ -8,6 +8,8 @@ defmodule Conpipe.Converter.Netlify do
 
   This use case derives from @paradox460's Netlify processor at
     https://github.com/elixir-tools/tableau/issues/107
+
+  To use, put this converter LAST in the Pipeline, after HTML conversion.
   """
 
   def convert({input_text, assigns}, _converter_options \\ []) do
