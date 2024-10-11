@@ -8,7 +8,7 @@ Conpipe is:
 - intended for use in Static Site Generators like
 [Tableau](https://github.com/elixir-tools/tableau) 
 - designed to be extended
-- UNSTABLE - expect breaking changes
+- EXPERIMENTAL - expect breaking changes
 
 ## Installation
 
