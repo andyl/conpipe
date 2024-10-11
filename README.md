@@ -43,7 +43,8 @@ end
 
 This project ships with a library of converters that can be reused across applications: 
 
-Markup Languagesg- `Conpipe.Converter.Earmark` - Markdown HTML
+Markup Languages
+- `Conpipe.Converter.Earmark` - Markdown HTML
 - `Conpipe.Converter.Mdex` - Markdown to HTML
  
 Template Processors 
