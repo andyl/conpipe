@@ -104,7 +104,7 @@ config :tableau, :config,
   ]
 ```
 
-All converters in this package use `TableauAdapter` by default.
+All converters in this package use `TableauAdapter`.
 
 ## Contributions
 
