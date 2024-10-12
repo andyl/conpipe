@@ -9,7 +9,7 @@ defmodule Conpipe.MixProject do
       app: :conpipe,
       version: @version,
       source_url: @source_url,
-      elixir: "~> 1.17",
+      elixir: "~> 1.16",
       start_permanent: Mix.env() == :prod,
       package: package(),
       deps: deps(),
@@ -44,7 +44,7 @@ defmodule Conpipe.MixProject do
       maintainers: ["Andy Leak"],
       licenses: ["MIT"],
       links: %{
-        GitHub: @source_url,
+        GitHub: @source_url
       },
       files: ~w(lib LICENSE mix.exs README.md .formatter.exs)
     ]

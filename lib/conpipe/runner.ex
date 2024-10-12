@@ -1,5 +1,4 @@
 defmodule Conpipe.Runner do
-
   @moduledoc """
   Functions to run a pipeline
   """
@@ -13,6 +12,7 @@ defmodule Conpipe.Runner do
     Enum.reduce(pipeline, {input, assigns}, fn
       {converter, opts}, acc ->
         converter.convert(acc, opts)
+
       converter, acc ->
         converter.convert(acc)
     end)
@@ -32,4 +32,3 @@ defmodule Conpipe.Runner do
     |> elem(0)
   end
 end
-

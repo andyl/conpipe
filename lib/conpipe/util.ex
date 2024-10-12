@@ -1,5 +1,4 @@
 defmodule Conpipe.Util do
-
   @moduledoc """
   Utility functions for Conpipe operations.
   """
@@ -27,5 +26,4 @@ defmodule Conpipe.Util do
   end
 
   defp maybe_convert_struct(map), do: map
-
 end
