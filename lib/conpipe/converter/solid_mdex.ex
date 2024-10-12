@@ -8,8 +8,15 @@ defmodule Conpipe.Converter.SolidMdex do
   and `Conpipe.Convert.Mdex` to transform Markdown to HTML.
   """
 
-  def convert({input_text, assigns}, _converter_options \\ []) do
-    {input_text, assigns}
+  @behaviour Conpipe.Converter
+
+  @doc "Convert Liquid tags then convert markdown to HTML"
+  @impl Conpipe.Converter
+  @spec convert({input :: String.t(), assigns :: map()}, options :: keyword()) ::
+          {output :: String.t(), assigns :: map()}
+
+  def convert({input, assigns}, _converter_opts \\ []) do
+    {input, assigns}
     |> Conpipe.Converter.Solid.convert()
     |> Conpipe.Converter.Mdex.convert()
   end

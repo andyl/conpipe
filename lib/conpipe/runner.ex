@@ -7,10 +7,10 @@ defmodule Conpipe.Runner do
   @doc """
   Reduce over a pipeline
 
-  Returns `{output_text, assigns}`
+  Returns `{output, assigns}`
   """
-  def reduce(pipeline, input_text, assigns) when is_list(pipeline) do
-    Enum.reduce(pipeline, {input_text, assigns}, fn
+  def reduce(pipeline, input, assigns) when is_list(pipeline) do
+    Enum.reduce(pipeline, {input, assigns}, fn
       {converter, opts}, acc ->
         converter.convert(acc, opts)
       converter, acc ->
@@ -18,17 +18,17 @@ defmodule Conpipe.Runner do
     end)
   end
 
-  def reduce(converter, input_text, assigns) do
-    reduce([converter], input_text, assigns)
+  def reduce(converter, input, assigns) do
+    reduce([converter], input, assigns)
   end
 
   @doc """
   Exec a pipeline
 
-  Returns `output_text`
+  Returns `output`
   """
-  def exec(pipeline, input_text, assigns) do
-    reduce(pipeline, input_text, assigns)
+  def exec(pipeline, input, assigns) do
+    reduce(pipeline, input, assigns)
     |> elem(0)
   end
 end

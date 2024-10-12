@@ -5,16 +5,21 @@ defmodule Conpipe.Converter.Solid do
   This converter uses the `Solid` template engine to transform Liquid tags.
 
   See the [Solid](https://github.com/leandrocp/mdex) repo for more information.
-
-  See the [EEx Hexdocs](https://hexdocs.pm/eex/1.17/EEx.html) for more info.
   """
 
-  def convert({input_text, assigns}, _converter_options \\ []) do
+  @behaviour Conpipe.Converter
+
+  @doc "Resolve liquid tags using Solid"
+  @impl Conpipe.Converter
+  @spec convert({input::String.t(), assigns::map()}, converter_opts::keyword()) ::
+          {output::String.t(), assigns::map()}
+
+  def convert({input, assigns}, _converter_opts \\ []) do
     str_assigns = assigns |> Conpipe.Util.stringify_keys()
 
-    {:ok, template} = Solid.parse(input_text)
-    output_text = Solid.render!(template, str_assigns) |> to_string
+    {:ok, template} = Solid.parse(input)
+    output = Solid.render!(template, str_assigns) |> to_string
 
-    {output_text, assigns}
+    {output, assigns}
   end
 end

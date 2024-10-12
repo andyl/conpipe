@@ -7,10 +7,17 @@ defmodule Conpipe.Converter.Eex do
   See [EEx Hexdocs](https://hexdocs.pm/eex/1.14/EEx.html) for more info.
   """
 
-  def convert({input_text, assigns}, _converter_options \\ []) do
-    output_text = EEx.eval_string(input_text, kw_assigns(assigns))
+  @behaviour Conpipe.Converter
 
-    {output_text, assigns}
+  @doc "Resolve EEx tags"
+  @impl Conpipe.Converter
+  @spec convert({input :: String.t(), assigns :: map()}, keyword()) ::
+  {output :: String.t(), assigns :: map()}
+
+  def convert({input, assigns}, _converter_opts \\ []) do
+    output = EEx.eval_string(input, kw_assigns(assigns))
+
+    {output, assigns}
   end
 
   defp kw_assigns(map) when is_map(map), do: Keyword.new(map)

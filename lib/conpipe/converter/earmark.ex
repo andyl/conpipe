@@ -7,9 +7,16 @@ defmodule Conpipe.Converter.Earmark do
   See the [Earmark Repo](https://hexdocs.pm/earmark/Earmark.html) for more info.
   """
 
-  def convert({input_text, assigns}, _converter_options \\ []) do
-    {:ok, output_text, _} = Earmark.as_html(input_text)
+  @behaviour Conpipe.Converter
 
-    {output_text, assigns}
+  @doc "Convert Markdown to HTML using Earmark"
+  @impl Conpipe.Converter
+  @spec convert({input :: String.t(), assigns :: map()}, options :: keyword()) ::
+          {output :: String.t(), assigns :: map()}
+
+  def convert({input, assigns}, _options \\ []) do
+    {:ok, output, _} = Earmark.as_html(input)
+
+    {output, assigns}
   end
 end

@@ -18,8 +18,8 @@ defmodule Conpipe.Converter.SolidTest do
     end
 
     test "with a liquid assignment" do
-      input_text = ~S({% assign zing = "444" %}{{zing}})
-      {output, _} = Converter.Solid.convert({input_text, %{}})
+      input = ~S({% assign zing = "444" %}{{zing}})
+      {output, _} = Converter.Solid.convert({input, %{}})
       assert output
     end
   end

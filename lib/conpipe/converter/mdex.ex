@@ -7,16 +7,22 @@ defmodule Conpipe.Converter.Mdex do
   See the [MDEx](https://github.com/edgurgel/solid) repo for more information.
   """
 
-  def convert({input_text, assigns}, _converter_options \\ []) do
+  @behaviour Conpipe.Converter
 
-    opts =     [
+  @doc "Convert Markdown to HTML using MDEx"
+  @impl Conpipe.Converter
+  @spec convert({input :: String.t(), assigns :: map()}, options :: keyword()) ::
+          {output :: String.t(), assigns :: map()}
+
+  def convert({input, assigns}, _converter_opts \\ []) do
+    opts = [
       extension: [table: true, header_ids: "", tasklist: true, strikethrough: true],
       render: [unsafe_: true],
       features: [syntax_highlight_theme: "kanagawa"]
     ]
 
-    output_text = MDEx.to_html!(input_text, opts)
+    output = MDEx.to_html!(input, opts)
 
-    {output_text, assigns}
+    {output, assigns}
   end
 end

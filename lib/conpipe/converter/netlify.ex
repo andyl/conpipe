@@ -14,12 +14,17 @@ defmodule Conpipe.Converter.Netlify do
   To use, put this converter LAST in the Pipeline, after HTML conversion.
   """
 
-  def convert({input_text, assigns}, _converter_options \\ []) do
+  @behaviour Conpipe.Converter
+
+  @doc "Perform HTML post-processing for Netlify image links"
+  @impl Conpipe.Converter
+  @spec convert({String.t(), map()}, keyword()) :: {String.t(), map()}
+  def convert({input, assigns}, _converter_opts \\ []) do
     cdn = Application.get_env(:pdf, :netlify, false)
 
-    output_text = do_netlify_images(input_text, cdn)
+    output = do_netlify_images(input, cdn)
 
-    {output_text, assigns}
+    {output, assigns}
   end
 
   defp do_netlify_images(html, true) do
@@ -27,5 +32,4 @@ defmodule Conpipe.Converter.Netlify do
   end
 
   defp do_netlify_images(html, _false), do: html
-
 end
