@@ -9,10 +9,14 @@ defmodule Conpipe.Converter.SolidMdex do
   """
 
   @behaviour Conpipe.Converter
+
+  @doc "Convert Liquid tags then convert markdown to HTML"
   @impl Conpipe.Converter
-  @spec convert({String.t(), map()}, keyword()) :: {String.t(), map()}
-  def convert({input_text, assigns}, _converter_options \\ []) do
-    {input_text, assigns}
+  @spec convert({input :: String.t(), assigns :: map()}, options :: keyword()) ::
+          {output :: String.t(), assigns :: map()}
+
+  def convert({input, assigns}, _converter_opts \\ []) do
+    {input, assigns}
     |> Conpipe.Converter.Solid.convert()
     |> Conpipe.Converter.Mdex.convert()
   end

@@ -63,7 +63,7 @@ Converters can be composed and run in a pipeline:
 
 ```elixir
 [Conpipe.Converter.Solid, MyConverter, Conpipe.Converter.Mdex] 
-|> Conpipe.Runner.reduce(input_text, assigns)
+|> Conpipe.Runner.reduce(input, assigns)
 ```
 
 This project ships with a library of converters that can be reused across applications: 

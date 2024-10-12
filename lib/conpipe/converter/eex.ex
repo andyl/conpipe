@@ -9,15 +9,15 @@ defmodule Conpipe.Converter.Eex do
 
   @behaviour Conpipe.Converter
 
-  @doc """
-  Resolve EEx tags.
-  """
+  @doc "Resolve EEx tags"
   @impl Conpipe.Converter
-  @spec convert({input_text::String.t(), assigns::map()}, keyword()) :: {String.t(), map()}
-  def convert({input_text, assigns}, _converter_options \\ []) do
-    output_text = EEx.eval_string(input_text, kw_assigns(assigns))
+  @spec convert({input :: String.t(), assigns :: map()}, keyword()) ::
+  {output :: String.t(), assigns :: map()}
 
-    {output_text, assigns}
+  def convert({input, assigns}, _converter_opts \\ []) do
+    output = EEx.eval_string(input, kw_assigns(assigns))
+
+    {output, assigns}
   end
 
   defp kw_assigns(map) when is_map(map), do: Keyword.new(map)

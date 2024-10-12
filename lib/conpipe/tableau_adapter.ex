@@ -23,7 +23,7 @@ defmodule Conpipe.TableauAdapter do
               front_matter :: map(),
               body :: String.t(),
               opts :: map()
-            ) :: output_text :: String.t()
+            ) :: output :: String.t()
       def convert(filepath, front_matter, body, opts) do
         assigns =
           opts
