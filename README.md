@@ -108,7 +108,7 @@ All converters in this package use `TableauAdapter`.
 
 ## Contributions
 
-PRs welcome.  Please include tests!  Please format your code!  (`mix format`) 
+PRs welcome!  Please include tests!  Please format your code!  (`mix format`) 
 
 This repo uses [Conventional
 Commits](https://www.conventionalcommits.org/en/v1.0.0/).
