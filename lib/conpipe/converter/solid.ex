@@ -11,8 +11,8 @@ defmodule Conpipe.Converter.Solid do
 
   @doc "Resolve liquid tags using Solid"
   @impl Conpipe.Converter
-  @spec convert({input::String.t(), assigns::map()}, converter_opts::keyword()) ::
-          {output::String.t(), assigns::map()}
+  @spec convert({input :: String.t(), assigns :: map()}, converter_opts :: keyword()) ::
+          {output :: String.t(), assigns :: map()}
 
   def convert({input, assigns}, _converter_opts \\ []) do
     str_assigns = assigns |> Conpipe.Util.stringify_keys()

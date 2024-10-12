@@ -12,7 +12,7 @@ defmodule Conpipe.Converter.Eex do
   @doc "Resolve EEx tags"
   @impl Conpipe.Converter
   @spec convert({input :: String.t(), assigns :: map()}, keyword()) ::
-  {output :: String.t(), assigns :: map()}
+          {output :: String.t(), assigns :: map()}
 
   def convert({input, assigns}, _converter_opts \\ []) do
     output = EEx.eval_string(input, kw_assigns(assigns))

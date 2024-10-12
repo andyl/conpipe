@@ -44,7 +44,7 @@ defmodule Conpipe.MixProject do
       maintainers: ["Andy Leak"],
       licenses: ["MIT"],
       links: %{
-        GitHub: @source_url,
+        GitHub: @source_url
       },
       files: ~w(lib LICENSE mix.exs README.md .formatter.exs)
     ]
