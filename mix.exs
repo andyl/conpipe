@@ -9,7 +9,7 @@ defmodule Conpipe.MixProject do
       app: :conpipe,
       version: @version,
       source_url: @source_url,
-      elixir: "~> 1.17",
+      elixir: "~> 1.16",
       start_permanent: Mix.env() == :prod,
       package: package(),
       deps: deps(),
