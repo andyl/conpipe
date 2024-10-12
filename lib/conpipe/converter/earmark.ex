@@ -1,9 +1,13 @@
 defmodule Conpipe.Converter.Earmark do
+  use Conpipe.TableauAdapter
+
   @moduledoc """
   This converter uses the `Earmark` conversion engine to transform markdown to HTML.
+
+  See the [Earmark Repo](https://hexdocs.pm/earmark/Earmark.html) for more info.
   """
 
-  def convert({input_text, assigns}, _converter_options) do
+  def convert({input_text, assigns}, _converter_options \\ []) do
     {:ok, output_text, _} = Earmark.as_html(input_text)
 
     {output_text, assigns}

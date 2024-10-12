@@ -1,4 +1,6 @@
 defmodule Conpipe.Converter.Netlify do
+  use Conpipe.TableauAdapter
+
   @moduledoc """
   This is an experimental converter, that post-processes HTML to rewrite image
   URLs to use Netlify.

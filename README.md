@@ -28,8 +28,8 @@ be found at <https://hexdocs.pm/conpipe>.
 
 ## Converters 
 
-A converter is a module with a `convert/2` function.  Here's an example of a
-converter that processes Liquid tags:
+A converter is a module with a `convert/2` function.  Here's a converter that
+processes Liquid tags:
 
 ```elixir 
 defmodule MyLiquidConverter do
@@ -41,17 +41,7 @@ defmodule MyLiquidConverter do
 end
 ```
 
-This project ships with a library of converters that can be reused across applications: 
-
-Markup Languages
-- `Conpipe.Converter.Earmark` - Markdown HTML
-- `Conpipe.Converter.Mdex` - Markdown to HTML
- 
-Template Processors 
-- `Conpipe.Converter.Eex` - EEx template language 
-- `Conpipe.Converter.Solid` - Liquid template language 
-
-Converters can be combined within a custom module:
+Converters can be chained in Elixir pipes:
 
 ```elixir
 defmodule My.DoItAllConverter do 
@@ -72,9 +62,41 @@ Converters can be composed and run in a pipeline:
 |> Conpipe.Runner.reduce(input_text, assigns)
 ```
 
+This project ships with a library of converters that can be reused across applications: 
+
+Markup Languages
+- `Conpipe.Converter.Earmark` - Markdown HTML
+- `Conpipe.Converter.Mdex` - Markdown to HTML
+ 
+Template Processors 
+- `Conpipe.Converter.Eex` - EEx template language 
+- `Conpipe.Converter.Solid` - Liquid template language 
+
 ## Tableau Integration 
 
-Conpipe has a library of converters which are compatible with Tableau.
+Adding `use Conpipe.TableauAdapter` to a converter provides a `convert/4`
+function that allows it to be called from Tableau.
 
-- `Conpipe.Converter.Tableau.SolidMdex` - Converts Liquid tags and generates HTML
+```elixir 
+defmodule MyConverter do 
+  use Conpipe.TableauAdapter 
 
+  def convert({text, assigns}, _opts \\ []) do 
+    {text, assigns} 
+    |> Conpipe.Converter.Solid.convert()
+    |> Conpipe.Converter.Mdex.convert()
+  end
+end
+```
+
+Then in `config/config.exs` 
+
+```elixir 
+config :tableau, :config,
+  url: "http://localhost:4999",
+  converters: [
+    md: MyConverter
+  ]
+```
+
+All converters in this package use `TableauAdapter` by default.
