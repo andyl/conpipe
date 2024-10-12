@@ -28,11 +28,13 @@ be found at <https://hexdocs.pm/conpipe>.
 
 ## Converters 
 
-A converter is a module with a `convert/2` function.  Here's a converter that
-processes Liquid tags:
+A converter is a module with a `convert/2` function that implements the
+`Conpipe.Converter` behavior.  Here's a converter that processes Liquid tags:
 
 ```elixir 
 defmodule MyLiquidConverter do
+  @behavior Conpipe.Converter 
+
   def convert({text, assigns}, opts \\ []) do
     {:ok, template} = Solid.parse(text, opts)
     output = Solid.render!(template, assigns) |> to_string
@@ -45,6 +47,8 @@ Converters can be chained in Elixir pipes:
 
 ```elixir
 defmodule My.DoItAllConverter do 
+  @behavior Conpipe.Converter 
+
   def convert({text, assigns}, _opts \\ []) do 
     {text, assigns} 
     |> Conpipe.Converter.Solid.convert()
@@ -79,6 +83,7 @@ function that allows it to be called from Tableau.
 
 ```elixir 
 defmodule MyConverter do 
+  @behavior Conpipe.Converter 
   use Conpipe.TableauAdapter 
 
   def convert({text, assigns}, _opts \\ []) do 
@@ -103,4 +108,5 @@ All converters in this package use `TableauAdapter` by default.
 
 ## Contributions
 
-PRs welcome.  Please include tests!  This repo uses [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
+PRs welcome.  Please include tests!  This repo uses [Conventional
+Commits](https://www.conventionalcommits.org/en/v1.0.0/).

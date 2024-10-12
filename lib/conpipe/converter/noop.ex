@@ -7,6 +7,9 @@ defmodule Conpipe.Converter.Noop do
   Used for testing.
   """
 
+  @behaviour Conpipe.Converter
+  @impl Conpipe.Converter
+  @spec convert({String.t(), map()}, keyword()) :: {String.t(), map()}
   def convert({text, assigns}, _converter_options \\ []) do
     {text, assigns}
   end

@@ -1,5 +1,4 @@
 defmodule Conpipe.TableauAdapter do
-
   @moduledoc false
 
   defmacro __using__(_opts) do
@@ -19,6 +18,12 @@ defmodule Conpipe.TableauAdapter do
       The `convert/4` function returns just the converted text. It should not
       be used in a pipeline.
       """
+      @spec convert(
+              filepath :: String.t(),
+              front_matter :: map(),
+              body :: String.t(),
+              opts :: map()
+            ) :: output_text :: String.t()
       def convert(filepath, front_matter, body, opts) do
         assigns =
           opts

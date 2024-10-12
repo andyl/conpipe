@@ -7,6 +7,9 @@ defmodule Conpipe.Converter.Mdex do
   See the [MDEx](https://github.com/edgurgel/solid) repo for more information.
   """
 
+  @behaviour Conpipe.Converter
+  @impl Conpipe.Converter
+  @spec convert({String.t(), map()}, keyword()) :: {String.t(), map()}
   def convert({input_text, assigns}, _converter_options \\ []) do
 
     opts =     [

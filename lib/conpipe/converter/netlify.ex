@@ -14,6 +14,9 @@ defmodule Conpipe.Converter.Netlify do
   To use, put this converter LAST in the Pipeline, after HTML conversion.
   """
 
+  @behaviour Conpipe.Converter
+  @impl Conpipe.Converter
+  @spec convert({String.t(), map()}, keyword()) :: {String.t(), map()}
   def convert({input_text, assigns}, _converter_options \\ []) do
     cdn = Application.get_env(:pdf, :netlify, false)
 
