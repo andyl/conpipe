@@ -79,7 +79,7 @@ Template Processors
 ## Tableau Integration 
 
 Adding `use Conpipe.TableauAdapter` to a converter provides a `convert/4`
-function that allows it to be called from Tableau.
+function that can be called directly from Tableau.
 
 ```elixir 
 defmodule MyConverter do 
@@ -108,7 +108,8 @@ All converters in this package use `TableauAdapter`.
 
 ## Contributions
 
-PRs welcome!  Please include tests!  Please format your code!  (`mix format`) 
+PRs welcome!  Please include tests!  
 
-This repo uses [Conventional
-Commits](https://www.conventionalcommits.org/en/v1.0.0/).
+PR's require [Conventional
+Commits](https://www.conventionalcommits.org/en/v1.0.0/) and formatted code.
+(`mix format`)
