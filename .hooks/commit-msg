@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Get the current branch name
+current_branch=$(git symbolic-ref --short HEAD)
+
+# List of branches to run the hook on
+allowed_branches=("master" "test" "dev")
+
+# Check if the current branch is in the allowed list
+if [[ " ${allowed_branches[@]} " =~ " ${current_branch} " ]]; then
+    # Your existing lint check script goes here
+    commit_msg_file=$1
+    commit_msg=$(cat "$commit_msg_file")
+
+    # Check if the commit message follows the Conventional Commits standard
+    # Updated regex to ensure the description starts with a lowercase letter
+    if ! echo "$commit_msg" | grep -qE "^(feat|fix|docs|style|refactor|test|chore)(\(.+\))?: [a-z]"; then
+        echo "Error: Commit message does not follow the Conventional Commits standard."
+        echo "Please use the format: <type>[optional scope]: <description>"
+        echo "The description must start with a lowercase letter."
+        exit 1
+    fi
+else
+    echo "Skipping commit message lint check for branch: $current_branch"
+fi
+
+exit 0
