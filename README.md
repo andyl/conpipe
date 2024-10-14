@@ -108,13 +108,12 @@ All converters in this package use `TableauAdapter`.
 
 ## Contributions
 
-PRs welcome!  Please include tests!  
+Pull Requests welcome!  
 
 PR's require [Conventional
-Commits](https://www.conventionalcommits.org/en/v1.0.0/) and formatted code.
-(`mix format`)
+Commits](https://www.conventionalcommits.org/en/v1.0.0/), passing tests and
+formatted code. (`mix format`)
 
-To auto-exec checks with pre-commit hooks, find validation scripts in the
-`.hooks` directory.  Alternatively many use the conventions in
-[pre-commit.com](https://pre-commit.com/) 
+To auto-exec validations with pre-commit hooks, find setup scripts in the
+`.hooks` directory.  
 
