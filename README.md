@@ -113,3 +113,8 @@ PRs welcome!  Please include tests!
 PR's require [Conventional
 Commits](https://www.conventionalcommits.org/en/v1.0.0/) and formatted code.
 (`mix format`)
+
+To auto-exec checks with pre-commit hooks, find validation scripts in the
+`.hooks` directory.  Alternatively many use the conventions in
+[pre-commit.com](https://pre-commit.com/) 
+
