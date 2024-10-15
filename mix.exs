@@ -1,7 +1,7 @@
 defmodule Conpipe.MixProject do
   use Mix.Project
 
-  @version "0.0.1-alpha.1"
+  @version "0.0.1-alpha.2"
   @source_url "https://github.com/andyl/conpipe"
 
   def project do
