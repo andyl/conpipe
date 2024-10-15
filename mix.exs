@@ -10,6 +10,7 @@ defmodule Conpipe.MixProject do
       version: @version,
       source_url: @source_url,
       elixir: "~> 1.16",
+      description: "Converter Pipeline",
       start_permanent: Mix.env() == :prod,
       package: package(),
       deps: deps(),
