@@ -8,7 +8,6 @@ Conpipe is:
 - intended for use in Static Site Generators like
 [Tableau](https://github.com/elixir-tools/tableau) 
 - designed to be extended
-- EXPERIMENTAL - expect breaking changes
 
 ## Installation
 
@@ -22,9 +21,7 @@ def deps do
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/conpipe>.
+Online docs can be found at <https://hexdocs.pm/conpipe>.
 
 ## Converters 
 
@@ -76,10 +73,13 @@ Template Processors
 - `Conpipe.Converter.Eex` - EEx template language 
 - `Conpipe.Converter.Solid` - Liquid template language 
 
+Find an up-to-date list of converters in the [online
+documentation](https://hexdocs.pm/conpipe/readme.html).
+
 ## Tableau Integration 
 
 Adding `use Conpipe.TableauAdapter` to a converter provides a `convert/4`
-function that allows it to be called from Tableau.
+function that can be called directly from Tableau.
 
 ```elixir 
 defmodule MyConverter do 
@@ -108,7 +108,12 @@ All converters in this package use `TableauAdapter`.
 
 ## Contributions
 
-PRs welcome.  Please include tests!  Please format your code!  (`mix format`) 
+Pull Requests welcome!  
 
-This repo uses [Conventional
-Commits](https://www.conventionalcommits.org/en/v1.0.0/).
+PR's require [Conventional
+Commits](https://www.conventionalcommits.org/en/v1.0.0/), passing tests and
+formatted code. (`mix format`)
+
+To auto-exec validations with pre-commit hooks, find setup scripts in the
+`.hooks` directory.  
+

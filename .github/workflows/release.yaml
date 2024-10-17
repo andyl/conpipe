@@ -45,9 +45,9 @@ jobs:
         if: steps.release.outputs.release_created && steps.cache.outputs.cache-hit != 'true'
         run: mix deps.get
 
-      - name: publish to hex
-        if: ${{ steps.release.outputs.release_created }}
-        env:
-          HEX_API_KEY: ${{secrets.HEX_API_KEY}}
-        run: |
-          mix hex.publish --yes
+      # - name: publish to hex
+      #   if: ${{ steps.release.outputs.release_created }}
+      #   env:
+      #     HEX_API_KEY: ${{secrets.HEX_API_KEY}}
+      #   run: |
+      #     mix hex.publish --yes
