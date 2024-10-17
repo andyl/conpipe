@@ -1,7 +1,7 @@
 defmodule Conpipe.MixProject do
   use Mix.Project
 
-  @version "0.0.1"
+  @version "0.0.1-alpha.2"
   @source_url "https://github.com/andyl/conpipe"
 
   def project do
@@ -10,6 +10,7 @@ defmodule Conpipe.MixProject do
       version: @version,
       source_url: @source_url,
       elixir: "~> 1.16",
+      description: "Converter Pipeline",
       start_permanent: Mix.env() == :prod,
       package: package(),
       deps: deps(),
