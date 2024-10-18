@@ -2,9 +2,8 @@
 
 A Converter Pipeline with a composable library of operations. Conpipe wraps
 template processors (eg EEx, Liquid) and plain-text markup languages (eg
-Markdown, Asciidoc) to streamline development.
+Markdown, Asciidoc).  Conpipe is:
 
-Conpipe is:
 - intended for use in Static Site Generators like
 [Tableau](https://github.com/elixir-tools/tableau) 
 - designed to be extended
@@ -21,7 +20,7 @@ def deps do
 end
 ```
 
-Online docs can be found at <https://hexdocs.pm/conpipe>.
+Online docs are at <https://hexdocs.pm/conpipe>.
 
 ## Converters 
 
@@ -108,12 +107,9 @@ All converters in this package use `TableauAdapter`.
 
 ## Contributions
 
-Pull Requests welcome!  
-
-PR's require [Conventional
+Pull Requests welcome!  PR's require [Conventional
 Commits](https://www.conventionalcommits.org/en/v1.0.0/), passing tests and
-formatted code. (`mix format`)
+formatted code. 
 
-To auto-exec validations with pre-commit hooks, find setup scripts in the
-`.hooks` directory.  
+Pre-commit hooks and setup scripts can be found in `.github/hooks`.
 
