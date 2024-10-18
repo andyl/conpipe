@@ -21,6 +21,8 @@ defmodule Conpipe.Converter.Mdex do
       features: [syntax_highlight_theme: "kanagawa"]
     ]
 
+    IO.puts("MDEX")
+
     output = MDEx.to_html!(input, opts)
 
     {output, assigns}
