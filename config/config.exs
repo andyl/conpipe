@@ -29,3 +29,8 @@ config :git_ops,
   # Pass in `true` to use `"README.md"` or a string to customize
   manage_readme_version: "README.md",
   version_tag_prefix: "v"
+
+if Mix.env() == :dev do
+  config :mix_test_interactive,
+    clear: true
+end
