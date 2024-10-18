@@ -5,6 +5,15 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [v0.0.4](https://github.com/andyl/conpipe/compare/v0.0.3...v0.0.4) (2024-10-18)
+
+
+
+
+### Bug Fixes:
+
+* remove test messages
+
 ## [v0.0.3](https://github.com/andyl/conpipe/compare/v0.0.2...v0.0.3) (2024-10-18)
 
 
