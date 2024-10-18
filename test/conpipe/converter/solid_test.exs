@@ -22,5 +22,24 @@ defmodule Conpipe.Converter.SolidTest do
       {output, _} = Converter.Solid.convert({input, %{}})
       assert output
     end
+
+    test "with assigns" do
+      input = ~S(x{{zing}}x)
+      {output, _} = Converter.Solid.convert({input, %{zing: "-"}})
+      assert output == "x-x"
+    end
+
+    test "with a missing variable" do
+      input = ~S(x{{zing}}x)
+      {output, _} = Converter.Solid.convert({input, %{}})
+      assert output == "xx"
+    end
+
+    test "with a malformed tag" do
+      input = ~S(y{{zing}y)
+      {output_str, _assigns} = Converter.Solid.convert({input, %{}})
+      assert output_str =~ "zing"
+      assert output_str =~ "ERROR"
+    end
   end
 end
