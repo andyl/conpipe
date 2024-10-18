@@ -14,7 +14,8 @@ defmodule Conpipe.MixProject do
       start_permanent: Mix.env() == :prod,
       package: package(),
       deps: deps(),
-      docs: docs()
+      docs: docs(),
+      aliases: aliases()
     ]
   end
 
@@ -57,6 +58,13 @@ defmodule Conpipe.MixProject do
       main: "readme",
       source_ref: "master",
       extras: ["README.md"]
+    ]
+  end
+
+  defp aliases do
+    [
+      release: "git_ops.release",
+      publish: "hex.publish"
     ]
   end
 end
