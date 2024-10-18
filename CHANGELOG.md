@@ -5,6 +5,11 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [v0.0.2](https://github.com/andyl/conpipe/compare/v0.0.1...v0.0.2) (2024-10-18)
+
+
+
+
 ## [v0.0.1](https://github.com/andyl/conpipe/compare/v0.0.1...v0.0.1) (2024-10-18)
 
 
