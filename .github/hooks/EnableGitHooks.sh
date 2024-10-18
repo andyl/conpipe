@@ -7,7 +7,7 @@ if [ ! -d ".git" ]; then
 fi
 
 # Set up the hooks path
-git config core.hooksPath .hooks
+git config core.hooksPath .github/hooks
 
-echo "Git hooks have been set up successfully!"
+echo "Git hooks have been enabled!"
 echo "The commit-msg hook will now enforce conventional commit messages."

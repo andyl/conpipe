@@ -1,4 +1,7 @@
 name: CI
+
+# run tests 
+
 on:
   pull_request:
   push:

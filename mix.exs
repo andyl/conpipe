@@ -36,7 +36,8 @@ defmodule Conpipe.MixProject do
 
       # dev
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
-      {:mix_test_interactive, "~> 4.1", only: :dev, runtime: false}
+      {:mix_test_interactive, "~> 4.1", only: :dev, runtime: false},
+      {:git_ops, "~> 2.6.1", only: :dev, runtime: false}
     ]
   end
 
