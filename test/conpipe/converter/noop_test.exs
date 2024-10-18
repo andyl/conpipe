@@ -12,7 +12,7 @@ defmodule Conpipe.Converter.NoopTest do
   describe "#convert" do
     test "with any input" do
       input = {"asdf", %{}}
-      output = Converter.Solid.convert(input)
+      output = Converter.Noop.convert(input)
       assert output == input
     end
   end
