@@ -16,7 +16,7 @@ Add `conpipe` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:conpipe, github: "andyl/conpipe"}
+    {:conpipe, "~> 0.0.1"}
   ]
 end
 ```
