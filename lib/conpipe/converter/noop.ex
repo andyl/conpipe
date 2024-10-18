@@ -15,7 +15,6 @@ defmodule Conpipe.Converter.Noop do
           {output :: String.t(), assigns :: map()}
 
   def convert({text, assigns}, _converter_opts \\ []) do
-    IO.puts("NOOP")
     {text, assigns}
   end
 end
