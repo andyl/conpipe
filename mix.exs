@@ -57,7 +57,7 @@ defmodule Conpipe.MixProject do
     [
       main: "readme",
       source_ref: "master",
-      extras: ["README.md"]
+      extras: ["README.md", "CHANGELOG.md"]
     ]
   end
 
