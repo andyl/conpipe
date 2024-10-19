@@ -7,9 +7,6 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 ## [v0.0.5](https://github.com/andyl/conpipe/compare/v0.0.4...v0.0.5) (2024-10-19)
 
-
-
-
 ### Bug Fixes:
 
 * handle invalid templates (#8)
