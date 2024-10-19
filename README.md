@@ -15,7 +15,7 @@ Add `conpipe` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:conpipe, "~> 0.0.5"}
+    {:conpipe, "~> 0.1.0"}
   ]
 end
 ```

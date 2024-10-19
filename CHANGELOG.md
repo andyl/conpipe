@@ -5,6 +5,15 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [v0.1.0](https://github.com/andyl/conpipe/compare/v0.0.5...v0.1.0) (2024-10-19)
+
+
+
+
+### Features:
+
+* add Conpipe.Extended
+
 ## [v0.0.5](https://github.com/andyl/conpipe/compare/v0.0.4...v0.0.5) (2024-10-19)
 
 ### Bug Fixes:
