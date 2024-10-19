@@ -5,7 +5,7 @@ defmodule Conpipe.Extended do
     quote do
       @doc """
       The `convert/1` function simply takes a string and returns a converted
-      stringk
+      string
       """
       @spec convert(input_text :: String.t()) :: output_text :: String.t()
       def convert(input_text) when is_binary(input_text) do
