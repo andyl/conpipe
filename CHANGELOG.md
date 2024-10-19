@@ -5,6 +5,15 @@ See [Conventional Commits](Https://conventionalcommits.org) for commit guideline
 
 <!-- changelog -->
 
+## [v0.0.5](https://github.com/andyl/conpipe/compare/v0.0.4...v0.0.5) (2024-10-19)
+
+
+
+
+### Bug Fixes:
+
+* handle invalid templates (#8)
+
 ## [v0.0.4](https://github.com/andyl/conpipe/compare/v0.0.3...v0.0.4) (2024-10-18)
 
 ### Bug Fixes:
