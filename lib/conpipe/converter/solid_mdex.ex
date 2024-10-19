@@ -1,5 +1,5 @@
 defmodule Conpipe.Converter.SolidMdex do
-  use Conpipe.TableauAdapter
+  use Conpipe.Extended
 
   @moduledoc """
   This converter consumes Markdown text with embedded Liquid tags.

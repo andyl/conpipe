@@ -1,5 +1,5 @@
 defmodule Conpipe.Converter.Earmark do
-  use Conpipe.TableauAdapter
+  use Conpipe.Extended
 
   @moduledoc """
   This converter uses the `Earmark` conversion engine to transform markdown to HTML.

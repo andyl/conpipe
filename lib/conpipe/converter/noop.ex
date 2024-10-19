@@ -1,5 +1,5 @@
 defmodule Conpipe.Converter.Noop do
-  use Conpipe.TableauAdapter
+  use Conpipe.Extended
 
   @moduledoc """
   This converter passes `{input, assigns}` thru unchanged.

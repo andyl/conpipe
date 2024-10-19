@@ -1,8 +1,18 @@
-defmodule Conpipe.TableauAdapter do
+defmodule Conpipe.Extended do
   @moduledoc false
 
   defmacro __using__(_opts) do
     quote do
+      @doc """
+      The `convert/1` function simply takes a string and returns a converted
+      stringk
+      """
+      @spec convert(input_text :: String.t()) :: output_text :: String.t()
+      def convert(input_text) when is_binary(input_text) do
+        convert({input_text, %{}})
+        |> Kernel.elem(0)
+      end
+
       @doc """
       The `convert/4` function can be called directly from Tableau.
 

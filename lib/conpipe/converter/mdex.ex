@@ -1,5 +1,5 @@
 defmodule Conpipe.Converter.Mdex do
-  use Conpipe.TableauAdapter
+  use Conpipe.Extended
 
   @moduledoc """
   This converter uses the `MDEx` template engine to transform markdown to HTML.

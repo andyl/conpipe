@@ -1,5 +1,5 @@
 defmodule Conpipe.Converter.Netlify do
-  use Conpipe.TableauAdapter
+  use Conpipe.Extended
 
   @moduledoc """
   This is an experimental converter, that post-processes HTML to rewrite image

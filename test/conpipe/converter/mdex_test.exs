@@ -9,10 +9,20 @@ defmodule Conpipe.Converter.MdexTest do
     end
   end
 
-  describe "#convert" do
+  describe "#convert/2" do
     test "with basic markdown text" do
       text = "# hello"
       {output, _} = Converter.Mdex.convert({text, %{}})
+      assert output =~ "<h1>"
+      assert output =~ "</h1>"
+      assert output =~ "hello"
+    end
+  end
+
+  describe "#convert/1" do
+    test "with basic markdown text" do
+      text = "# hello"
+      output = Converter.Mdex.convert(text)
       assert output =~ "<h1>"
       assert output =~ "</h1>"
       assert output =~ "hello"

@@ -1,5 +1,5 @@
 defmodule Conpipe.Converter.Eex do
-  use Conpipe.TableauAdapter
+  use Conpipe.Extended
 
   @moduledoc """
   This converter uses the `EEx` template engine to transform EEx tags.

@@ -1,5 +1,5 @@
 defmodule Conpipe.Converter.Solid do
-  use Conpipe.TableauAdapter
+  use Conpipe.Extended
 
   @moduledoc """
   This converter uses the `Solid` template engine to transform Liquid tags.

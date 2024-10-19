@@ -9,7 +9,7 @@ defmodule Conpipe.Converter.EexTest do
     end
   end
 
-  describe "#convert" do
+  describe "#convert/2" do
     test "with a basic EEx tag" do
       text = "hello"
       input = ~s(<%= myvar %>)

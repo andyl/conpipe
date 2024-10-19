@@ -77,13 +77,13 @@ documentation](https://hexdocs.pm/conpipe/readme.html).
 
 ## Tableau Integration 
 
-Adding `use Conpipe.TableauAdapter` to a converter provides a `convert/4`
+Adding `use Conpipe.Extended` to a converter provides a `convert/4`
 function that can be called directly from Tableau.
 
 ```elixir 
 defmodule MyConverter do 
   @behavior Conpipe.Converter 
-  use Conpipe.TableauAdapter 
+  use Conpipe.Extended 
 
   def convert({text, assigns}, _opts \\ []) do 
     {text, assigns} 
